@@ -48,7 +48,7 @@
           <div class="col-3 d-flex align-items-center">
             <input
               type="text"
-              class="py-1 mx-2 px-2"
+              class="py-1 mx-2"
               name=""
               id="delete-box"
               placeholder="Nhập vào id"
@@ -101,6 +101,9 @@
                             class="form-control input-box"
                             id="userId"
                           />
+                          <span class="text-danger"
+                            >Id là số từ 1 cho đến 3 ký tự</span
+                          >
                         </div>
                         <div class="form-group col-6">
                           <span>Họ và tên</span>
@@ -109,6 +112,9 @@
                             class="form-control input-box"
                             id="userName"
                           />
+                          <span class="text-danger"
+                            >Tên là chuỗi không chứa số</span
+                          >
                         </div>
                       </div>
                       <div class="row">
@@ -119,6 +125,9 @@
                             class="form-control input-box"
                             id="address"
                           />
+                          <span class="text-danger"
+                            >Địa chỉ không bỏ trống</span
+                          >
                         </div>
                         <div class="form-group col-6">
                           <span>Email</span>
@@ -127,6 +136,9 @@
                             class="form-control input-box"
                             id="email"
                           />
+                          <span class="text-danger"
+                            >Email không đúng định dạng</span
+                          >
                         </div>
                       </div>
                       <div class="row">
@@ -142,6 +154,7 @@
                             <option value="Giáo viên">Giáo viên</option>
                             <option value="Khách hàng">Khách hàng</option>
                           </select>
+                          <span class="text-danger">Vui lòng chọn chức vụ</span>
                         </div>
                       </div>
                       <div class="row optional" id="student">
@@ -152,6 +165,7 @@
                             id="math"
                             class="form-control input-box"
                           />
+                          <span class="text-danger">Vui lòng nhập điểm</span>
                         </div>
                         <div class="col-4 form-group">
                           <span>Điểm Lý</span>
@@ -160,6 +174,7 @@
                             id="physic"
                             class="form-control input-box"
                           />
+                          <span class="text-danger">Vui lòng nhập điểm</span>
                         </div>
                         <div class="col-4 form-group">
                           <span>Điểm Hóa</span>
@@ -168,6 +183,7 @@
                             id="chemistry"
                             class="form-control input-box"
                           />
+                          <span class="text-danger">Vui lòng nhập điểm</span>
                         </div>
                       </div>
                       <div class="row optional" id="teacher">
@@ -178,6 +194,9 @@
                             class="form-control input-box"
                             id="workDay"
                           />
+                          <span class="text-danger"
+                            >Vui lòng nhập số ngày làm</span
+                          >
                         </div>
                         <div class="col-6 form-group">
                           <span>Lương theo ngày</span>
@@ -186,6 +205,9 @@
                             class="form-control input-box"
                             id="salary"
                           />
+                          <span class="text-danger"
+                            >Vui lòng nhập tiền lương</span
+                          >
                         </div>
                       </div>
                       <div class="row optional" id="customer">
@@ -196,6 +218,9 @@
                             id="company"
                             class="form-control input-box"
                           />
+                          <span class="text-danger"
+                            >Vui lòng không bỏ trống</span
+                          >
                         </div>
                         <div class="col-4 form-group">
                           <span>Trị giá hóa đơn</span>
@@ -204,6 +229,9 @@
                             id="bill"
                             class="form-control input-box"
                           />
+                          <span class="text-danger"
+                            >Trị giá hóa đơn phải là một số</span
+                          >
                         </div>
                         <div class="col-4 form-group">
                           <span>Đánh giá</span>
@@ -212,6 +240,9 @@
                             id="review"
                             class="form-control input-box"
                           />
+                          <span class="text-danger"
+                            >Vui lòng không bỏ trống</span
+                          >
                         </div>
                       </div>
                     </form>

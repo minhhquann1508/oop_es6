@@ -243,4 +243,5 @@ document.getElementById('popup-btn').onclick = () => {
 
 getData(list.list);
 
+
 export { correct, failValid, list, validation };
