@@ -1,0 +1,10 @@
+header {
+    padding: 20px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.content {
+    margin: 40px 0;
+}
+.optional {
+    display: none;
+}

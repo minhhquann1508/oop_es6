@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quản lý giảng daỵ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- font awe -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <h6>Cyber</h6>
+          </div>
+          <div class="col-3">
+            <select
+              name=""
+              id=""
+              class="form-control"
+              onchange="filterType(this)"
+            >
+              <option value="all">Tất cả</option>
+              <option value="Học sinh">Học sinh</option>
+              <option value="Giáo viên">Giáo viên</option>
+              <option value="Khách hàng">Khách hàng</option>
+            </select>
+          </div>
+          <div class="col-3 d-flex align-items-center">
+            <input
+              type="text"
+              class="py-1 mx-2 px-2"
+              name=""
+              id="delete-box"
+              placeholder="Nhập vào id"
+            />
+            <button class="btn btn-success" id="delete-btn">Xóa</button>
+          </div>
+          <div class="col-3 text-right">
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-success"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              id="popup-btn"
+            >
+              Thêm nhân sự
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Form thêm nhân sự
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                      id="close-btn"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-left">
+                    <form action="">
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <span>ID</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="userId"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <span>Họ và tên</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="userName"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <span>Địa chỉ</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="address"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <span>Email</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="email"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 form-group">
+                          <select
+                            name=""
+                            id="position"
+                            class="form-control input-box"
+                            onchange="changeUIByPostion(this)"
+                          >
+                            <option value="">Chọn chức vụ</option>
+                            <option value="Học sinh">Học sinh</option>
+                            <option value="Giáo viên">Giáo viên</option>
+                            <option value="Khách hàng">Khách hàng</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row optional" id="student">
+                        <div class="col-4 form-group">
+                          <span>Điểm Toán</span>
+                          <input
+                            type="number"
+                            id="math"
+                            class="form-control input-box"
+                          />
+                        </div>
+                        <div class="col-4 form-group">
+                          <span>Điểm Lý</span>
+                          <input
+                            type="number"
+                            id="physic"
+                            class="form-control input-box"
+                          />
+                        </div>
+                        <div class="col-4 form-group">
+                          <span>Điểm Hóa</span>
+                          <input
+                            type="number"
+                            id="chemistry"
+                            class="form-control input-box"
+                          />
+                        </div>
+                      </div>
+                      <div class="row optional" id="teacher">
+                        <div class="col-6 form-group">
+                          <span>Ngày làm</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="workDay"
+                          />
+                        </div>
+                        <div class="col-6 form-group">
+                          <span>Lương theo ngày</span>
+                          <input
+                            type="text"
+                            class="form-control input-box"
+                            id="salary"
+                          />
+                        </div>
+                      </div>
+                      <div class="row optional" id="customer">
+                        <div class="col-4 form-group">
+                          <span>Tên công ty</span>
+                          <input
+                            type="text"
+                            id="company"
+                            class="form-control input-box"
+                          />
+                        </div>
+                        <div class="col-4 form-group">
+                          <span>Trị giá hóa đơn</span>
+                          <input
+                            type="text"
+                            id="bill"
+                            class="form-control input-box"
+                          />
+                        </div>
+                        <div class="col-4 form-group">
+                          <span>Đánh giá</span>
+                          <input
+                            type="text"
+                            id="review"
+                            class="form-control input-box"
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="update-btn"
+                    >
+                      Sửa thông tin
+                    </button>
+                    <button type="button" class="btn btn-success" id="add-btn">
+                      Thêm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="content">
+      <div class="container">
+        <table class="table">
+          <thead class="bg-dark text-white">
+            <tr>
+              <th>ID</th>
+              <th>Họ tên</th>
+              <th>Email</th>
+              <th>Địa chỉ</th>
+              <th>Chức vụ</th>
+              <th>Lương</th>
+              <th>ĐTB</th>
+              <th><i class="fa-solid fa-gear"></i></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./src/controller/main.js"></script>
+  </body>
+</html>
